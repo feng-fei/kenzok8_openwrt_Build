@@ -106,7 +106,7 @@ jobs:
         ./scripts/feeds update -a 
         sed -i 's#GO_PKG_TARGET_VARS.*# #g' feeds/packages/utils/v2dat/Makefile 
         ./scripts/feeds install -a
-        cp -f feeds/smpackage/.github/diy/${{matrix.target}}.config .config && make defconfig
+        cp -f .config .config && make defconfig
         
     - name: Download package
       working-directory: ./openwrt
